@@ -29,7 +29,7 @@ public class Player {
         if (!hand.isEmpty()) {
             return hand.remove(0);
         }
-        return null; // Handle empty hand gracefully
+        return null; 
     }
 
     public boolean isEmpty() {
