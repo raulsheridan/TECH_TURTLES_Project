@@ -102,19 +102,26 @@ public class WarGame {
 
                     System.out.println("End of Round " + round + "\n-------------\n");
                 }
-
-                if (player1Score > player2Score) {
-                    System.out.println(player1.getName() + " wins the game!");
-                } else if (player2Score > player1Score) {
-                    System.out.println(player2.getName() + " wins the game!");
-                } else {
-                    System.out.println("It's a tie game!");
-                }
-
-                System.out.println(player1.getName() + ": " + player1Score + " points");
-                System.out.println(player2.getName() + ": " + player2Score + " points");
-                System.out.println("=============================");
             }
+
+            // Display points table and final result
+            System.out.println("=============================");
+            System.out.println("        Points Table");
+            System.out.println("=============================");
+            System.out.printf("%-15s | %-10s | %-10s%n", "Player", "Points", "Status");
+            System.out.println("=============================");
+            System.out.printf("%-15s | %-10d | %s%n", player1.getName(), player1Score, (player1Score > player2Score) ? "Winner" : "");
+            System.out.printf("%-15s | %-10d | %s%n", player2.getName(), player2Score, (player2Score > player1Score) ? "Winner" : "");
+            System.out.println("=============================");
+
+            if (player1Score > player2Score) {
+                System.out.println(player1.getName() + " wins the game!");
+            } else if (player2Score > player1Score) {
+                System.out.println(player2.getName() + " wins the game!");
+            } else {
+                System.out.println("It's a tie game!");
+            }
+            System.out.println("=============================");
         } else if (input.equals("exit")) {
             System.out.println("Exiting the game.");
         } else {
